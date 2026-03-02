@@ -5,6 +5,10 @@ library(SPEI)
 data(wichita)
 wichita$PET <- thornthwaite(wichita$TMED, 37.6475)
 plot(wichita$PET, type = "l")
+wichita$BAL <- wichita$PRCP - wichita$PET
 
 wichita.ts <- ts(wichita[, -c(1, 2)], end = c(2011, 10), frequency = 12) # make ts
 plot(wichita.ts) # wiew multi-variable ts
+
+spei12 <- spei(wichita.ts[, "BAL"], 12)
+plot(spei12)
