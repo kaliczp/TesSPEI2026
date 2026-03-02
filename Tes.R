@@ -2,7 +2,7 @@
 rawTes <- read.table("HABP_1D_20020101_20251231_35116.csv", head = TRUE, sep = ";")
 ## Monthly
 rawTesHon <- read.table("HABP_1MO_200201_202512_35116.csv", head = TRUE, sep = ";")
-a
+
 rawTesHon$PET <- thornthwaite(rawTesHon$t, 47.2622)
 rawTesHon$BAL <- rawTesHon$rau - rawTesHon$PET
 
