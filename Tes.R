@@ -24,3 +24,9 @@ plot(spei12)
 
 spei24 <- spei(rawTesHon.ts[, "BAL"], 24)
 plot(spei24)
+
+spei48 <- spei(rawTesHon.ts[, "BAL"], 48)
+plot(spei48)
+
+spei36 <- spei(rawTesHon.ts[, "BAL"], 36)
+plot(spei36)
