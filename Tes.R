@@ -2,8 +2,9 @@
 rawTes <- read.table("HABP_1D_20020101_20251231_35116.csv", head = TRUE, sep = ";")
 ## Monthly
 rawTesHon <- read.table("HABP_1MO_200201_202512_35116.csv", head = TRUE, sep = ";")
-
+## evaporációbecslés hőmérsékletből
 rawTesHon$PET <- thornthwaite(rawTesHon$t, 47.2622)
+## csapadék és párolgás különbsége
 rawTesHon$BAL <- rawTesHon$rau - rawTesHon$PET
 
 ## grafikus error check
